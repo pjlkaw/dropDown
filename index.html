@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <style>
+        #submenu  {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="d-flex w-100 bg-dark text-light text-decoration-none list-unstyled gap-5 text-center p-2 justify-content-center">
+
+        <li><a href="#" class="text-light text-decoration-none fw-bold">Início</a></li>
+
+        <li id="menu">
+            <a href="#" class="text-light text-decoration-none fw-bold" id="cursos">Cursos</a>
+
+            <ul id="submenu" class="list-unstyled opacity-0 d-none">
+                <li><a href="#" class="text-light text-decoration-none ">HTML</a></li>
+                <li><a href="#" class="text-light text-decoration-none ">CSS</a></li>
+                <li><a href="#" class="text-light text-decoration-none ">Javascript</a></li>
+            </ul>
+        </li>
+
+    </nav>
+
+    <script>
+        document.getElementById('cursos').addEventListener('mouseover', () => {
+            document.getElementById('submenu').style.opacity='1'
+            document.getElementById('submenu').style.display='flex'
+            alert()
+        })
+
+        document.getElementById('cursos').addEventListener('mouseout', () => {
+            document.getElementById('submenu').style.opacity='0'
+            document.getElementById('submenu').style.display='none'
+        })
+    </script>
+</body>
+</html>
