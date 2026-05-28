@@ -10,35 +10,38 @@
     <style>
         #submenu  {
             display: none;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+            flex-direction: column;
         }
     </style>
 
 </head>
 <body>
-    <nav class="d-flex w-100 bg-dark text-light text-decoration-none list-unstyled gap-5 text-center p-2 justify-content-center">
+    <nav class="d-flex w-100 bg-dark text-light text-decoration-none list-unstyled gap-5 p-2 justify-content-center">
 
-        <li><a href="#" class="text-light text-decoration-none fw-bold">Início</a></li>
 
-        <li id="menu">
+        <li class="w-50"><a href="#" class="text-light text-decoration-none fw-bold">Início</a></li>
+
+        <li class="w-50" id="menu">
             <a href="#" class="text-light text-decoration-none fw-bold" id="cursos">Cursos</a>
 
-            <ul id="submenu" class="list-unstyled opacity-0 d-none">
-                <li><a href="#" class="text-light text-decoration-none ">HTML</a></li>
-                <li><a href="#" class="text-light text-decoration-none ">CSS</a></li>
-                <li><a href="#" class="text-light text-decoration-none ">Javascript</a></li>
+            <ul id="submenu" class="list-unstyled ">
+                <li><a onclick="alert('HTML')" href="#" class="text-light text-decoration-none ">HTML</a></li>
+                <li><a onclick="alert('CSS')" href="#" class="text-light text-decoration-none ">CSS</a></li>
+                <li><a onclick="alert('Javascript')" href="#" class="text-light text-decoration-none ">Javascript</a></li>
             </ul>
         </li>
 
     </nav>
 
     <script>
-        document.getElementById('cursos').addEventListener('mouseover', () => {
+        document.getElementById('menu').addEventListener('mouseover', () => {
             document.getElementById('submenu').style.opacity='1'
             document.getElementById('submenu').style.display='flex'
-            alert()
         })
 
-        document.getElementById('cursos').addEventListener('mouseout', () => {
+        document.getElementById('menu').addEventListener('mouseout', () => {
             document.getElementById('submenu').style.opacity='0'
             document.getElementById('submenu').style.display='none'
         })
